@@ -123,7 +123,7 @@ namespace HotelListing.Net6.Controllers
             }
 
             await _countryRepository.DeleteAsync(id);
-            await _hotelsRepository.SaveAsync();
+            await _countryRepository.SaveAsync();
 
             return NoContent();
         }

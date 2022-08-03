@@ -2,9 +2,9 @@
 
 namespace HotelListing.Net6.Data
 {
-    public class HotelDBContext:DbContext
+    public class HotelDBContext : DbContext
     {
-        public HotelDBContext(DbContextOptions o):base(o)
+        public HotelDBContext(DbContextOptions o) : base(o)
         {
 
         }
@@ -40,9 +40,9 @@ namespace HotelListing.Net6.Data
                 {
                     id = 1,
                     name = "Bahama Hotel International",
-                     adress = "Bahama Hotel International Address",
-                     rating =1,
-                     countryId =1
+                    adress = "Bahama Hotel International Address",
+                    rating = 1,
+                    countryId = 1
 
                 },
                 new Hotel

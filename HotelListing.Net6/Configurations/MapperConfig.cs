@@ -5,7 +5,7 @@ using HotelListing.Net6.Models.Hotel;
 
 namespace HotelListing.Net6.Configurations
 {
-    public class MapperConfig:Profile
+    public class MapperConfig : Profile
     {
         public MapperConfig()
         {

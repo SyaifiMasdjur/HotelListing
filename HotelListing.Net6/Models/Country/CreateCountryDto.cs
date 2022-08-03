@@ -2,8 +2,8 @@
 
 namespace HotelListing.Net6.Models.Country
 {
-    public class CreateCountryDto: BaseCountryDto
+    public class CreateCountryDto : BaseCountryDto
     {
-       
+
     }
 }

@@ -62,14 +62,21 @@ namespace HotelListing.Net6.Controllers
         // PUT: api/Countries/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCountry(int id, CountryDto country)
+        public async Task<IActionResult> PutCountry(int id, UpdateCountryDto country)
         {
             if (id != country.id)
             {
                 return BadRequest();
             }
 
-            var c = _mapper.Map<Country>(country);
+
+            var c = await _context.Countries.FindAsync(id);
+            if(c == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(country,c);
 
             try
             {

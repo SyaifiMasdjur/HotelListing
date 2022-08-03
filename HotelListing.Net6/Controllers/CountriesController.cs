@@ -83,6 +83,7 @@ namespace HotelListing.Net6.Controllers
             try
             {
                 await _countryRepository.UpdateAsync(c);
+                await _countryRepository.SaveAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -106,6 +107,7 @@ namespace HotelListing.Net6.Controllers
         {
             var country = _mapper.Map<Country>(countrydto);
             await _countryRepository.AddAsync(country);
+            await _countryRepository.SaveAsync();
 
             return CreatedAtAction("GetCountry", new { id = country.id }, country);
         }
@@ -121,6 +123,7 @@ namespace HotelListing.Net6.Controllers
             }
 
             await _countryRepository.DeleteAsync(id);
+            await _hotelsRepository.SaveAsync();
 
             return NoContent();
         }

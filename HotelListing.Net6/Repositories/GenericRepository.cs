@@ -44,6 +44,11 @@ namespace HotelListing.Net6.Repositories
             return await _context.Set<T>().FindAsync(id);
         }
 
+        public async Task SaveAsync()
+        {
+            var o = await _context.SaveChangesAsync();
+        }
+
         public Task<T> UpdateAsync(T entity)
         {
             _context.Update(entity);

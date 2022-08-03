@@ -1,3 +1,4 @@
+using HotelListing.Net6.Configurations;
 using HotelListing.Net6.Data;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -26,6 +27,11 @@ builder.Host.UseSerilog((context, loggerconfig) => {
     loggerconfig.WriteTo.Console().ReadFrom
                         .Configuration(context.Configuration);
 });
+
+//AutoMapper
+builder.Services.AddAutoMapper(typeof(MapperConfig));
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
